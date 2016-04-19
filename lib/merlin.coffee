@@ -54,7 +54,6 @@ module.exports = class Merlin
     new Range (@point start), (@point end)
 
   sync: (buffer) ->
-    debugger;
     return Promise.resolve(true) unless buffer.isChanged()
     buffer.setChanged false
     @query buffer, ["tell", "start", "at", @position([0, 0])]
